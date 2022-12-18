@@ -22,7 +22,7 @@ void main() {
     vec2 truPos = vec2(1.0, iRes.y / iRes.x) * Pos;
 
     float angle = atan(truPos.y, truPos.x);
-    float dist = pow(length(truPos), .4 + sin((iTime + cos(iTime * .05) * 0.1) * throbSpeed) * 0.2);
+    float dist = pow(length(truPos), .4 + sin((iTime + cos(iTime * .05) * 0.1) * throbSpeed) * 0.2 * (throbStrength * 0.1));
 
     float spiFactor = pow(sin(angle + dist * 40. * zoom - iTime * 5. * spinSpeed) + 1.0, 50.);
     spiFactor = clamp(spiFactor, 0., 1.);
